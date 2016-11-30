@@ -1,2 +1,2 @@
 var child = new Object();
-console.log("master");
+console.log("local change");
