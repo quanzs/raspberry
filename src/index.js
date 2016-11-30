@@ -1,0 +1,1 @@
+var child = new Object();
