@@ -1,0 +1,88 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/*登录画面*/
+body#login {
+	text-align: center;
+	/*background: url(http://bizhi.zhuoku.com/2011/09/04/webshots/webshots025.jpg) no-repeat center center;*/
+	background: #111;
+	background-size: cover;
+}
+#login button {
+	position: absolute;
+	bottom: 20%;
+	left: 10%;
+	width: 80%;
+	background: rgba(85, 118, 204, 0.9);
+	height: 60px;
+	font-size: 24px;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+}
+
+#login .header {
+	overflow: hidden;
+	border-radius: 100%;
+	width: 70%;
+	margin: 20% auto 0;
+}
+
+#login .header img {
+	display: block;
+	width: 100%;
+}
+
+
+/*首页*/
+body#index {
+	background: url(http://bizhi.zhuoku.com/2011/09/04/webshots/webshots025.jpg) no-repeat center center;
+	background-size: cover;
+}
+#index .wrapper {
+	width: 380px;
+	height: 540px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -190px;
+	margin-top: -270px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 8px #666;
+	background: rgba(255,255,255, 1);
+}
+
+#index .wrapper img {
+	display: block;
+	width: 90%;
+	margin: 10px auto 0 auto;
+}
+
+#index h2 {
+	text-align: center;
+	margin: 0;
+}
+
+/*首页*/
+body#success {
+	background: url(http://bizhi.zhuoku.com/2011/09/04/webshots/webshots025.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+#success h1 {
+	text-align: center;
+	background: rgba(6,6,6,0.8);
+	color: #fff;
+	height: 140px;
+	line-height: 140px;
+	margin: 0;
+	width: 80%;
+	left: 10%;
+	border-radius: 6px;
+	transition-duration: 1s;
+	position: absolute;
+	top: -100%;
+}

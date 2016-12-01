@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body id="login">
+	<div class="header">
+		<img src="img/header.jpg">
+	</div>
+	<button id="btn" onclick="permitLogin();">允许登录</button>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	// 从二维码中取得的认证用token
+	var r = "<%= r %>";
+	// 用来通知跳转的socket的id
+	var sid = "<%= sid %>";
+
+	var socket = io();
+	
+	// [允许登录]按钮按下处理
+	function permitLogin() {
+		socket.emit('permit', {r: r, sid: sid});
+	}
+
+	// 服务器端返回登录状态
+	socket.on("permitResult", function(data){
+		console.log(data);
+		alert(data);
+	});
+</script>
+</html>

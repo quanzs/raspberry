@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body id="index">
+	<div class="wrapper">
+		<img id="qrImg" src="/create_qrcode?text="/>
+		<h2><%= title %></h2>
+	</div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	var socket = io();
+	
+	// 刷新二维码
+	socket.on("refreshQRcode", function(data){
+		console.log(data);
+		var path = location.origin + "/forlogin?r=" + data.token + "&sid=" + data.sid;
+		document.getElementById("qrImg").src = "/create_qrcode?text=" + encodeURIComponent(path);
+	});
+
+	// 服务器端返回登录状态
+	socket.on("permitResult", function(data){
+		console.log(data);
+		if(data == "OK") {
+			location.href = "/success"
+		}
+	});
+
+	// 当连接上服务器之后，主动让服务器来刷新二维码
+	socket.on('connect', function () {
+		socket.emit("refreshQRcode", "refresh");
+	});
+</script>
+</html>
