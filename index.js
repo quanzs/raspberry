@@ -72,7 +72,7 @@ io.on('connection', function(socket){
 });
 
 // 启动服务
-var server = http.listen(8080, function () {
+var server = http.listen(process.env.PORT || 8080, function () {
   var host = server.address().address;
   var port = server.address().port;
 
